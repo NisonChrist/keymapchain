@@ -18,8 +18,8 @@ keymap.whenInMode('INSERT').map('jk').to('<Esc>') -- Exit insert mode to normal 
 -- Import keymapchain module
 local keymap = require('keymapchain')
 -- Use chain calls to map keys
-keymap.whenInMode('NORMAL').map('<leader>sv').to'<C-w>v') -- Horizontal split window
-keymap.whenInMode('NORMAL').map('<leader>sh').to'<C-w>s') -- Vertical split window
+keymap.whenInMode('NORMAL').map('<leader>sv').to('<C-w>v') -- Horizontal split window
+keymap.whenInMode('NORMAL').map('<leader>sh').to('<C-w>s') -- Vertical split window
 ```
 
 ## Features
