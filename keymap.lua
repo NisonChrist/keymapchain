@@ -1,13 +1,13 @@
 Keymap = {}
 
-Keymap.MODE = {
+local MODE = {
     NORMAL = 'n',
     INSERT = 'i',
     VISUAL = 'v',
     COMMAND = 'c',
 }
 
-Keymap.validateMode = function(mode)
+local validateMode = function(mode)
     for key in pairs(Keymap.MODE) do
         if key == mode then
             return true
