@@ -8,19 +8,19 @@ local MODE = {
 }
 
 local validateMode = function(mode)
-    for key in pairs(Keymap.MODE) do
+    for key in pairs(MODE) do
         if key == mode then
             return true
         end
     end
-    error("Invalid mode: " .. mode .. ". Expected one of: " .. table.concat(Keymap.MODE, ", "))
+    error("Invalid mode: " .. mode .. ". Expected one of: " .. table.concat(MODE, ", "))
 end
 
 Keymap.whenInMode = function(mode)
-    Keymap.validateMode(mode)
+    validateMode(mode)
     local map = function(key)
         local to = function(keyOrCommand)
-            vim.keymap.set(Keymap.MODE[mode], key, keyOrCommand)
+            vim.keymap.set(MODE[mode], key, keyOrCommand)
         end
         return { to = to }
     end
