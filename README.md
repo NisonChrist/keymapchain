@@ -1,4 +1,7 @@
 # keymapchain
+
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/NisonChrist/keymapchain)
+
 A Lua module Implementing neovim key mapping through chain calls.
 
 ```
