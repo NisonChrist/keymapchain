@@ -1,4 +1,4 @@
-Keymap = {}
+keymapchain = {}
 
 local MODE = {
     NORMAL = 'n',
@@ -16,11 +16,12 @@ local validateMode = function(mode)
     error("Invalid mode: " .. mode .. ". Expected one of: " .. table.concat(MODE, ", "))
 end
 
-Keymap.whenInMode = function(mode)
+keymapchain.whenInMode = function(mode)
     validateMode(mode)
     local map = function(key)
         local to = function(keyOrCommand)
             vim.keymap.set(MODE[mode], key, keyOrCommand)
+            return keymapchain.whenInMode
         end
         return { to = to }
     end
@@ -29,4 +30,4 @@ Keymap.whenInMode = function(mode)
     }
 end
 
-return Keymap
+return keymapchain
